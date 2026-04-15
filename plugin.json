@@ -16,5 +16,14 @@
     "self-documenting",
     "ci",
     "pipeline"
-  ]
+  ],
+  "category": "development",
+  "_meta": {
+    "copilotCliVersion": "1.0.27",
+    "copilotSdkVersion": "0.2.2",
+    "lastVerified": "2026-04-15",
+    "notes": "Root manifest for Copilot CLI. Minimal manifest for Claude Code lives in .claude-plugin/plugin.json."
+  },
+  "skills": "skills/",
+  "hooks": "hooks/policy.copilot.json"
 }

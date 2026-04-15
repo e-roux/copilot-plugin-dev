@@ -1,30 +1,41 @@
 {
-  "version": 1,
   "hooks": {
-    "sessionStart": [
+    "SessionStart": [
       {
-        "type": "command",
-        "bash": "hooks/scripts/session-start.sh",
-        "timeoutSec": 10
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-start.sh\"",
+            "timeout": 10000
+          }
+        ]
       }
     ],
-    "preToolUse": [
+    "PreToolUse": [
       {
-        "type": "command",
-        "bash": "hooks/scripts/pre-tool.sh",
-        "timeoutSec": 15
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/pre-tool.sh\"",
+            "timeout": 15000
+          }
+        ]
       }
     ],
-    "postToolUse": [
+    "PostToolUse": [
       {
-        "type": "command",
-        "bash": "bash hooks/scripts/post-tool.sh",
-        "timeoutSec": 10
-      },
-      {
-        "type": "command",
-        "bash": "bash hooks/scripts/pipeline-chainguard.sh",
-        "timeoutSec": 5
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/post-tool.sh\"",
+            "timeout": 10000
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/pipeline-chainguard.sh\"",
+            "timeout": 5000
+          }
+        ]
       }
     ]
   }
